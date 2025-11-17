@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TVLI music</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+    <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" >
+        <div id="header-placeholder"></div>
+        <script>
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    // Highlight the current page link
+                    const currentPage = window.location.href;
+                    const navLinks = document.querySelectorAll('#header-placeholder a');
+                    navLinks.forEach(link => {
+                        if (link.href === currentPage) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+        </script>
+    </div>
+    <div class="mainbody">
+        <div class="show-container">
+            <div class="row">
+                <div class="col-1"><h1>upcoming</h1></div>
+                <div class="col-10"></div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row"><hr noshade></div>
+            <div id="upcoming-shows" class="row">
+                <table class="show-table">
+                    <tbody id="upcoming-shows-body"></tbody>
+                </table>
+            </div>
+            <div class="row"><div class="col-12"><br></div><div></div>
+            <div class="row">
+                <div class="col-1"><h1>past</h1></div>
+                <div class="col-10"></div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row"><hr noshade></div>
+            <div id="past-shows" class="row">
+                <table class="show-table">
+                    <tbody id="past-shows-body"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row"><div class="col-auto">&nbsp;</div></div>
+        <div class="row"><div class="col-auto">&nbsp;</div></div>
+
+        <div id="footer-placeholder" class="footer"></div>
+        <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+        </script>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        const shows = [
+           {
+                "venue": "1015 Folsom - with Two Lanes",
+                "link": "https://wl.eventim.us/event/two-lanes/647097?afflky=1015Folsom",
+                "location": "San Francisco, CA",
+                "date": "2025-10-02",
+                "button": true
+            },
+           {
+                "venue": "El Rey - with Two Lanes",
+                "link": "https://www.axs.com/uk/events/942113/two-lanes-tickets",
+                "location": "Los Angeles, CA",
+                "date": "2025-10-04",
+                "button": true
+            },
+                    {
+                "venue": "The Template, Home Grown House",
+                "link": "https://www.obtemplate.com/event-details/home-grown-house-1",
+                "location": "San Diego, CA",
+                "date": "2025-09-13",
+                "button": true
+            },
+          {
+                "venue": "AquaFête Endless Summer",
+                "link": "https://www.sandalaexperiences.com/events/sep-6-aquafete-boat-party",
+                "location": "Santa Barbara, CA",
+                "date": "2025-09-06",
+                "button": true,
+            "soldOut": true
+            },
+                                {
+                "venue": "LEVEL 8 @ The Moxy Hotel 8th Floor",
+                "link": "https://partiful.com/e/KSMemhs9cYkGdEnNVK8f",
+                "location": "Los Angeles, CA",
+                "date": "2025-07-11",
+                "button": true
+            },
+                      {
+                "venue": "Sound Bar w/ Rezident",
+                "link": "https://wl.seetickets.us/event/rezident-at-sound-bar-or-chicago-il/648381?afflky=SoundBarChicago",
+                "location": "Chicago, IL",
+                "date": "2025-06-27",
+                "button": true
+            },
+            {
+                "venue": "The Tangerinn",
+                "link": "",
+                "location": "Tangier, Morocco",
+                "date": "2025-06-10",
+                "button": false
+            },
+                      {
+                "venue": "Blue Pub Night Club",
+                "link": "",
+                "location": "Tangier, Morocco",
+                "date": "2025-06-10",
+                "button": false
+            },
+            {
+                "venue": "Deep Melodic House @ Danceteria",
+                "link": "https://shotgun.live/en/events/tlvi-may-2025",
+                "location": "Marseille, France",
+                "date": "2025-05-16",
+                "button": true
+            },
+            {
+                "venue": "Resident DTLA",
+                "link": "https://www.eventbrite.com/e/tvli-with-tamara-lanza-shvlv-tickets-1234049016829?aff=ebdsoporgprofile",
+                "location": "Los Angeles, CA",
+                "date": "2025-03-13",
+                "button": true
+            },
+            {
+                "venue": "International Bar",
+                "link": "",
+                "location": "Salt Lake City, UT",
+                "date": "2024-12-12",
+                "button": false
+            },
+            {
+                "venue": "Album Release Party - Kiva",
+                "link": "https://www.sandalaexperiences.com/events/tvli-album-release-party",
+                "location": "Santa Barbara, CA",
+                "date": "2024-12-06",
+                "button": true,
+                "soldOut": true
+            },
+            {
+                "venue": "Recess with TVLI - Bar Smith",
+                "link": "https://www.simpletix.com/e/recess-with-tvli-tickets-196337",
+                "location": "Phoenix, AZ",
+                "date": "2024-12-13",
+                "button": true
+            },
+            {
+                "venue": "Bad Bar",
+                "link": "https://posh.vip/e/tvli-dj-jnote-yonas-michael-seattle-2",
+                "location": "Seattle, WA",
+                "date": "2024-10-02"
+            },
+            {
+                "venue": "The Midnight PDX & The SIX Music Venue",
+                "link": "https://www.eventbrite.com/e/jakeup-with-tvli-and-dj-chills-tickets-1024419435107",
+                "location": "Portland, OR",
+                "date": "2024-10-03"
+            },
+            {
+                "venue": "Soundscape of Mars - Paris 75",
+                "link": "https://lppsf.com/events",
+                "location": "San Francisco, CA",
+                "date": "2024-10-05"
+            },
+            {
+                "venue": "Home Grown House - The Template",
+                "location": "San Diego, CA",
+                "date": "2024-08-16",
+                "soldOut": true
+            },
+            {
+                "venue": "Moroccan Lounge",
+                "link": "https://themoroccan.com/tm-event/tvli-and-jakke/",
+                "location": "Los Angeles, CA",
+                "date": "2024-07-18"
+            },
+            {
+                "venue": "AquaFete Sandala",
+                "link": "https://www.sandalaexperiences.com/events/july-19-aquafete-boat-party",
+                "location": "Santa Barbara, CA",
+                "date": "2024-07-19",
+                "soldOut": true
+            },
+            {
+                "venue": "Sunsender",
+                "link": "https://sunsendersb.com",
+                "location": "Santa Barbara, CA",
+                "date": "2024-04-27"
+            },
+            {
+                "venue": "Shabang festival",
+                "link": "https://www.shabangslo.com",
+                "location": "San Luis Obispo, CA",
+                "date": "2024-05-04"
+            },
+            {
+                "venue": "Studio sound room (w/Traveller)",
+                "location": "Santa Barbara, CA",
+                "date": "2024-03-15"
+            },
+            {
+                "venue": "Terrace hill",
+                "location": "San Luis Obispo, CA",
+                "date": "2024-03-09"
+            }
+        ];
+
+        const upcomingShowsBody = document.getElementById('upcoming-shows-body');
+        const pastShowsBody = document.getElementById('past-shows-body');
+        const today = new Date();
+
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+        shows.forEach(show => {
+            const showDate = new Date(show.date + 'T12:00:00'); // Set time to noon to avoid timezone issues
+            const showRow = document.createElement('tr');
+            showRow.innerHTML = `
+                <td class="show-datevenue">${showDate.toLocaleDateString('en-US', options)}
+                <br>${show.venue}</td>
+                <td class="show-location">${show.location}</td>
+                <td>
+                    ${show.button && show.link && !show.soldOut && showDate >= today ? 
+                        `<a href="${show.link}" target="_new" class="btn btn-primary tickets-button">Tickets</a>`
+                      : show.soldOut ? '<button class="btn btn-secondary sold-out-button" disabled>SOLD OUT</button>' : ''}
+                </td>
+            `;
+            if (showDate >= today) {
+                upcomingShowsBody.appendChild(showRow);
+            } else {
+                pastShowsBody.appendChild(showRow);
+            }
+        });
+    </script>
+  </body>
+</html>

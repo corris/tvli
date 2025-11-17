@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TVLI music</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white">
+
+        <div id="header-placeholder"></div>
+        <script>
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    // Highlight the current page link
+                    const currentPage = window.location.href;
+                    const navLinks = document.querySelectorAll('#header-placeholder a');
+                    navLinks.forEach(link => {
+                        if (link.href === currentPage) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+        </script>
+      </div>
+      <div class="container text-container">
+        <div class="row">
+          <div class="col-1"><h1>press</h1></div>
+          <div class="col-10"></div>
+          <div class="col-1"></div>
+        </div>
+        <div class="row"><div class="col-auto">&nbsp;</div></div>
+        <div id="articles-container" class="row">
+          <table class="press-table">
+            <tbody id="articles-body"></tbody>
+          </table>
+        </div>
+        <script>
+            const articles = [
+                {
+                    publication: "Santa Barbara Independent",
+                    date: "Dec 3, 2024",
+                    title: "TVLI Releases New Album with Live Show at Kiva Cowork in Santa Barbara",
+                    link: "https://www.independent.com/2024/12/03/tvli-releases-new-album-with-live-show-at-kiva-cowork-in-santa-barbara/"
+                },
+                {
+                    publication: "Grimy Goods",
+                    date: "Jul 2, 2024",
+                    title: "Artists You Should Know: TVLI",
+                    link: "https://www.grimygoods.com/2024/07/02/artists-you-should-know-tvli/#google_vignette"
+                },
+                {
+                    date: "Jun 1, 2024",
+                    publication: "We Found New Music",
+                    title: "Los Angeles' Moroccan Lounge Heats Up with TVLI’s Electrifying Electronic Music",
+                    link: "https://wefoundnewmusic.com/las-moroccan-lounge-heats-up-with-tvlis-electrifying-electronic-music/"
+                },
+                {
+                    date: "Mar 12, 2024",
+                    publication: "Santa Barbara Independent",
+                    title: "Santa Barbara Musician is Bringing “Melodic House” Music to Studio Sound Room",
+                    link: "https://www.independent.com/2024/03/12/santa-barbara-musician-is-bringing-melodic-house-music-to-studio-sound-room/"
+                },
+                {
+                    date: "Feb 14, 2024",
+                    publication: "Gala Music",
+                    title: "TVLI Brings “Home” to Gala Music as a Signature Edition NFT",
+                    link: "https://news.gala.com/gala-music/tvli-brings-home-to-gala-music-as-a-signature-edition-nft/"
+                }
+            ];
+
+            const articlesBody = document.getElementById('articles-body');
+
+            articles.forEach(article => {
+                const articleRow = document.createElement('tr');
+                articleRow.innerHTML = `
+                    <td class="press-datepub">${article.date}
+                    <br>${article.publication}</td>
+                    <td class="press-title"><a href="${article.link}" target="_new">${article.title}</a></td>
+                    <td>
+                        <a href="${article.link}" target="_new" class="btn btn-primary read-more-button">Read More</a>
+                    </td>
+                `;
+                articlesBody.appendChild(articleRow);
+            });
+        </script>
+        <div class="row"><br><br><br></div>
+        <div id="footer-placeholder"></div>
+        <script>
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        </script>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

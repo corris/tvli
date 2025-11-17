@@ -1,0 +1,146 @@
+body {
+    font-family: 'Urbanist', sans-serif;
+    font-size: calc(15px + 0.390625vw);
+    background-color: black; /* Changed background color to black */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.emaillink {
+    font-size: 1.5rem; /* Reduced font size */
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.bp {
+    margin: 10px;
+    border-radius: 10px;
+}
+.img-fluid {
+    border-radius: 10px;
+}
+.nav-bg {
+    background-image: url('/img/crowd_red_large.jpeg'); 
+    background-size: cover;
+    height: 100px; /* Adjust the height as needed */
+}
+.bg-image {
+    /*background-image: url('/img/crowd_red_large.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 200px; /* Adjust the height as needed */
+    */
+}
+.press-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.press-table th, .press-table td {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+.press-datepub {
+    text-align: left;
+}
+.press-title {
+    text-align: center;
+    font-weight: bold;
+}
+.read-more-button {
+    margin-left: 10px;
+}
+.black-hole-logo {
+    width: 150px; /* Increased size */
+}
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+.kss3te-logo {
+    width: 100px; /* Adjust size for desktop */
+}
+@media (max-width: 768px) {
+    .center-content .col {
+        flex: 0 0 100%; /* Make columns full width on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+    .kss3te-logo {
+        width: 90px; /* Adjust size for mobile */
+    }
+}
+@media (min-width: 768px) {
+  .video-container video {
+    max-width: 75%;
+  }
+}
+.attribution a {
+    color: blue;
+}
+.gallery-img {
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.show-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.show-table th, .show-table td {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+.show-datevenue {
+    text-align: left;
+    font-weight: bold;
+}
+.show-location {
+    text-align: center;
+}
+.tickets-button {
+    margin-left: 10px;
+}
+.sold-out-button {
+    margin-left: 10px;
+    cursor: not-allowed;
+}
+
+h1 {
+    color: white;
+}
+
+.attribution {
+    color: white;
+}
+
+.text-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    color: white; /* Ensure text color is white */
+}
+
+.headline-img {
+    max-width: 50%; /* Adjust the size as needed */
+}
+
+.tvli-logo {
+    max-width: 50%; /* Adjust the size as needed */
+}
+
+.show-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 20px;
+    border-radius: 10px;
+    color: white; /* Ensure text color is white */
+    margin-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}

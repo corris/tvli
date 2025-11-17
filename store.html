@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TVLI music | store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" >
+            <div id="header-placeholder"></div>
+            <script>
+                fetch('header.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('header-placeholder').innerHTML = data;
+                        // Highlight the current page link
+                        const currentPage = window.location.href;
+                        const navLinks = document.querySelectorAll('#header-placeholder a');
+                        navLinks.forEach(link => {
+                            if (link.href === currentPage) {
+                                link.classList.add('active');
+                            }
+                        });
+                    });
+            </script>
+        </div>
+        <div class="mainbody text-white">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-sm">
+                <br>
+                <h2>store coming soon.</h2>
+                <br>
+                Email <a href=mailto:tali@tvlimusic.com>tali@tvlimusic.com</a> for shirts
+                <br>
+                <br>
+                <br>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <div class="row"><div class="col-auto">&nbsp;</div>
+        </div>
+        <hr noshade width=100% style="color:white;">
+            
+        <div id="footer-placeholder"></div>
+        <script>
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </div>
+  </body>
+</html>
