@@ -12,21 +12,7 @@
     <div class="container-fluid">
     <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white">
         <div id="header-placeholder"></div>
-        <script>
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                    // Highlight the current page link
-                    const currentPage = window.location.href;
-                    const navLinks = document.querySelectorAll('#header-placeholder a');
-                    navLinks.forEach(link => {
-                        if (link.href === currentPage) {
-                            link.classList.add('active');
-                        }
-                    });
-                });
-        </script>
+        <script src="header-loader.js" defer></script>
     </div>
     <div class="mainbody">
         <div class="row">
